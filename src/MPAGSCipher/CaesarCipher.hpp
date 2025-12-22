@@ -28,6 +28,26 @@ class CaesarCipher{
          * \param key the key for the cipher, given as a string which needs to be converted into an integer
          */
         explicit CaesarCipher (const std::string& key);
+
+            /**
+         * \brief Encrypts or decrypts a string and returns resulting string 
+         * 
+         * \param inputText input text to be encrypted, decrypted
+         * \param encrypt if true, encrypt; if false, decrypt
+         */
+        std::string applyCipher (const std::string& inputText, const bool encrypt) const;
+
+    private:
+        /**
+         * \brief Alphabet
+         * 
+         * \param alphabet the key for the cipher
+         */
+        const const std::vector<char> alphabet;
+        std::vector<char> alphabet_{
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        
         std::size_t key_{0};
 
 };
