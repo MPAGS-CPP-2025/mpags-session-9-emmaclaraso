@@ -15,13 +15,20 @@
 
 class CaesarCipher{
     public:
-    /**
-     * \brief New cipher with key 
-     * 
-     * \param key the key for the cipher
-     */
-    CaesarCipher (std::size_t key);
-    std::size_t key_{0};
+        /**
+         * \brief New cipher with key 
+         * 
+         * \param key the key for the cipher
+         */
+        explicit CaesarCipher (std::size_t key);
+
+        /**
+         * \brief New cipher with key 
+         * 
+         * \param key the key for the cipher, given as a string which needs to be converted into an integer
+         */
+        explicit CaesarCipher (const std::string& key);
+        std::size_t key_{0};
 
 };
 
