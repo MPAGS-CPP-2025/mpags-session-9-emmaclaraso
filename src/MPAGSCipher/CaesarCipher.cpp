@@ -1,4 +1,5 @@
 #include "CaesarCipher.hpp"
+#include "CipherMode.hpp"
 
 #include <string>
 #include <vector>
@@ -44,7 +45,7 @@ CaesarCipher::CaesarCipher(const std::string& key): key_{0} {
 
 }
 
-std::string CaesarCipher::applyCipher (const std::string& inputText, const bool encrypt) const{
+std::string CaesarCipher::applyCipher (const std::string& inputText, const CipherMode encrypt) const{
     // Create the output string
     std::string outputText;
 
@@ -63,7 +64,7 @@ std::string CaesarCipher::applyCipher (const std::string& inputText, const bool 
                 // Apply the appropriate shift (depending on whether we're encrypting
                 // or decrypting) and determine the new character
                 // Can then break out of the loop over the alphabet
-                if (encrypt) {
+                if (encrypt == CipherMode::encrypt) {
                     processedChar = alphabet_[(i + truncatedKey) % alphabetSize];
                 } else {
                     processedChar = alphabet_[(i + alphabetSize - truncatedKey) %

@@ -1,6 +1,8 @@
 #ifndef MPAGSCIPHER_RUNCAESARCIPHER_HPP
 #define MPAGSCIPHER_RUNCAESARCIPHER_HPP
 
+#include "CipherMode.hpp"
+
 #include <string>
 
 /**
@@ -17,6 +19,6 @@
  * \return The result of applying the cipher to the input text
  */
 std::string runCaesarCipher(const std::string& inputText, const std::size_t key,
-                            const bool encrypt);
+                            const CipherMode encrypt);
 
 #endif

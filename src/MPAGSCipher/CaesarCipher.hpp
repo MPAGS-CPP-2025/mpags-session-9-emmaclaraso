@@ -2,6 +2,7 @@
 #define MPAGSCIPHER_CAESARCIPHER_HPP
 
 #include <string>
+#include "CipherMode.hpp"
 
 /**
  * \file CaesarCipher.hpp
@@ -35,7 +36,7 @@ class CaesarCipher{
          * \param inputText input text to be encrypted, decrypted
          * \param encrypt if true, encrypt; if false, decrypt
          */
-        std::string applyCipher (const std::string& inputText, const bool encrypt) const;
+        std::string applyCipher (const std::string& inputText, const CipherMode encrypt) const;
 
     private:
         /**
@@ -43,7 +44,7 @@ class CaesarCipher{
          * 
          * \param alphabet the key for the cipher
          */
-        const const std::vector<char> alphabet;
+        const std::vector<char> alphabet;
         std::vector<char> alphabet_{
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
